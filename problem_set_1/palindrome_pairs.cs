@@ -7,7 +7,7 @@ class Program
         string[] words = { "bat", "tab", "cat", "race", "car", "ooo","ooo", "dog" };
         int[][] result = PalindromePairs(words);
 
-        //following the output format answer must be: [[0, 1], [1, 0], [3, 4], [5, 6], [6, 5]]
+        //following the output format, answer must be: [[0, 1], [1, 0], [3, 4], [5, 6], [6, 5], [9, 7], [9, 8]]
         Console.Write("[");
         for (int i = 0; i < result.Length; i++)
         {
