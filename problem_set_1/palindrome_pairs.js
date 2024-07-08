@@ -38,7 +38,7 @@ function main() {
     const words = ["bat", "tab", "cat", "race", "car", "ooo", "ooo", "_124?#", "_124?#", "#?421"];
     const result = palindromePairs(words);
 
-    // Following the output format, answer must be: [[0, 1], [1, 0], [3, 4], [5, 6], [6, 5]]
+    //following the output format, answer must be: [[0, 1], [1, 0], [3, 4], [5, 6], [6, 5], [9, 7], [9, 8]]
     let output = "[";
     for (let i = 0; i < result.length; i++) {
         output += `[${result[i][0]}, ${result[i][1]}]`;

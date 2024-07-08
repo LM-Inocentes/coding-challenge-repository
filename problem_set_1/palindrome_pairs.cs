@@ -4,10 +4,10 @@ class Program
 {
     static void Main()
     {
-        string[] words = { "bat", "tab", "cat", "race", "car", "ooo","ooo", "dog" };
+        string[] words = { "bat", "tab", "cat", "race", "car", "ooo", "ooo", "_124?#", "_124?#", "#?421" };
         int[][] result = PalindromePairs(words);
 
-        //following the output format, answer must be: [[0, 1], [1, 0], [3, 4], [5, 6], [6, 5], [9, 7], [9, 8]]
+        //following the output format answer must be: [[0, 1], [1, 0], [3, 4], [5, 6], [6, 5], [9, 7], [9, 8]]
         Console.Write("[");
         for (int i = 0; i < result.Length; i++)
         {

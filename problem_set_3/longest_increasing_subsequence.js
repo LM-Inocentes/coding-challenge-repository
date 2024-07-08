@@ -1,8 +1,4 @@
 function lengthOfLIS(nums) {
-    if (nums.length === 0) {
-        return 0;
-    }
-    
     let LISarr = new Array(nums.length).fill(1);
     let maxLength = 1;
     

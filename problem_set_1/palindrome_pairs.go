@@ -42,7 +42,7 @@ func main() {
 	words := []string{"bat", "tab", "cat", "race", "car", "ooo", "ooo", "_124?#", "_124?#", "#?421"}
 	result := palindromePairs(words)
 
-	// Following the output format, answer must be: [[0, 1], [1, 0], [3, 4], [5, 6], [6, 5]]
+	//following the output format, answer must be: [[0, 1], [1, 0], [3, 4], [5, 6], [6, 5], [9, 7], [9, 8]]
 	output := "["
 	for i := 0; i < len(result); i++ {
 		output += fmt.Sprintf("[%d, %d]", result[i][0], result[i][1])
