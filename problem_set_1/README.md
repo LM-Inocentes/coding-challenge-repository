@@ -27,3 +27,12 @@ the concatenation of the two words, i.e., words[i] + words[j], forms a palindrom
 **Output Formatting**<br />
   &emsp;-In Main, iterate through result and print each pair in the format [i, j].<br />
   &emsp;-Manage the output format and ensure no trailing comma after the last pair.<br />
+
+  **Example Execution**<br />
+Given the input words = { "bat", "tab", "cat", "race", "car", "ooo", "ooo", "_124?#", "_124?#", "#?421" }, the function PalindromePairs will find and return the pairs:<br />
+
+&emsp;"bat", "tab" forms 0, 1<br />
+&emsp;"tab", "bat" forms 1, 0<br />
+&emsp;"race", "car" forms 3, 4<br />
+&emsp;"ooo", "ooo" forms 5, 6 & 6, 5<br />
+&emsp;"#?421", "_124?#" forms 9, 7 & 9, 8 (Since 7 & 8 are the same)<br />
