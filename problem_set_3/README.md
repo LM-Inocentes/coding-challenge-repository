@@ -8,24 +8,27 @@ subsequence of a given array such that all elements of the subsequence are sorte
 
 **SOLUTION OVERVIEW**
 
-**Main Function**<br />
-  &emsp;-Initialize an array of strings words containing various words.<br />
-  &emsp;-Call PalindromePairs(words) to find palindrome pairs and store the result in result.<br />
-  &emsp;-Print the result in the specified output format.<br />
+**Dynamic Programming Setup**<br />
+  &emsp;-Create an array LISarr of the same length as nums, initialized to 1. This array will store the length of the longest increasing subsequence ending at each index.<br />
+  &emsp;-Initialize maxLength to 1, which will eventually hold the maximum length of the LIS found.<br />
 
-**Palindrome Checking Function (IsPalindrome)**<br />
-  &emsp;-Checks if a given string s is a palindrome.<br />
-  &emsp;-Uses two pointers (left and right) starting from the beginning and end of the string respectively.<br />
-  &emsp;-Compares characters at these pointers moving towards the center. If characters don't match, returns false; otherwise, returns true if the entire string is traversed without mismatches.<br />
+**Iterating through the Array**<br />
+   &emsp;-Loop through each element in nums starting from the second element (i = 1).<br />
+   &emsp;-For each element nums[i], iterate through all previous elements nums[j] (where j < i).<br />
+   &emsp;-Compare nums[j] with nums[i]. If nums[j] < nums[i], it means nums[i] can extend the increasing subsequence ending at nums[j].<br />
+   &emsp;-Update LISarr[i] to be the maximum of its current value (LISarr[i]) and the length of the subsequence ending at nums[j] plus one (LISarr[j] + 1).<br />
 
-**Palindrome Pairs Function (PalindromePairs)**<br />
-  &emsp;-Initialize tempResult to store potential palindrome pairs with a size sufficient to hold all pairs (n * (n - 1)).<br />
-  &emsp;-Loop through each pair of words in the array words.<br />
-  &emsp;-Concatenate each pair of words (words[i] + words[j]) and check if the resulting string is a palindrome using IsPalindrome.<br />
-  &emsp;-If a palindrome pair is found, store the indices [i, j] in tempResult and increment count.<br />
-  &emsp;-Copy valid pairs from tempResult into result, which is resized to count to hold exactly the number of valid pairs found.<br />
-  &emsp;-Return result, which contains all valid palindrome pairs.<br />
+**Updating Maximum Length**<br />
+  &emsp;-Update maxLength to be the maximum of its current value and LISarr[i]. This ensures maxLength always holds the length of the longest increasing subsequence found so far.<br />
 
-**Output Formatting**<br />
-  &emsp;-In Main, iterate through result and print each pair in the format [i, j].<br />
-  &emsp;-Manage the output format and ensure no trailing comma after the last pair.<br />
+  **Return Result**<br />
+  &emsp;-After iterating through all elements of nums, maxLength will contain the length of the longest increasing subsequence.<br />
+
+**Printing the Result**<br />
+  &emsp;-The printLIS function formats the input array nums and prints both the input and the result of lengthOfLIS(nums).<br />
+
+**Example Execution**<br />
+Given nums = [10, 9, 2, 5, 3, 7, 101, 100, 101, 101, 18]:<br />
+
+The function computes the LIS, which is [2, 3, 7, 100, 101] with a length of 5.<br />
+The algorithm efficiently computes the LIS using a dynamic programming approach, ensuring that each subproblem (finding the LIS ending at each index) is solved optimally.
