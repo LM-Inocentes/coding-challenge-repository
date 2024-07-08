@@ -28,3 +28,16 @@ Problem Description: Given a string containing just the characters '(', ')', '{'
   &emsp;-After iterating through all characters, checks if the stack is empty (top == -1).<br />
     &emsp;&emsp;-If true, returns true (all brackets matched and nested correctly).<br />
     &emsp;&emsp;-Otherwise, returns false (there are unmatched opening brackets).<br />
+
+**Example Execution**<br />
+**Given the test cases:**<br />
+&emsp;"[{()}]" should return true because all brackets are correctly nested.<br />
+&emsp;"()[]{}" should return true for the same reason.<br />
+&emsp;"{}([){}]" should return false due to mismatched brackets.<br />
+&emsp;"" (empty string) should return true because there are no brackets to check.<br />
+&emsp;"}" should return false because there's a closing bracket without a corresponding opening bracket.<br />
+&emsp;"(" should return false for the same reason.<br />
+
+The solution efficiently checks each character in the string using a stack to ensure that all brackets are properly nested and returns true or false based on whether the string of brackets is valid.<br />
+
+This approach ensures that the solution is both clear and efficient, leveraging a stack to handle the nested structure of brackets and providing accurate validation for different input scenarios.<br />
